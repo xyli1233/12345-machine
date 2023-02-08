@@ -1,25 +1,25 @@
 from flask import Flask
 from flask import jsonify
+from sys
 app = Flask(__name__)
 
-def chicken_rabbit_cage(heads, legs):
-    for rabbit in range(heads + 1):
-        chicken = heads - rabbit
-        if 2 * chicken + 4 * rabbit == legs:
-            return [{'chicken':chicken}, {'rabbit':rabbit}]
-    return [{'chicken':-1}, {'rabbit':-1}]
+def cal(x, y):
+    if n<=1:
+        return [{'sum': float('-inf')}]
+    sum = (start + end)*num/2
+    return [{'sum':sum}]
 
 
 @app.route('/')
 def hello():
-    print("I am an Automatic chicken_rabbit_cage problem solving Machine")
-    return 'Hello Automatic chicken_rabbit_cage problem solving Machine! Please use it to solve chicken-rabbit-cage problem at route by typing: /chicken_rabbit_cage/x/y (x is heads and y is legs)'
+    print("I am an Arithmetic Progression Sum Calculator")
+    return 'Hello Arithmetic Progression Sum Calculator! Please use it to calculate the sum at route by typing: /start/end/num'
 
-@app.route('/chicken_rabbit_cage/<heads>/<legs>')
-def changeroute(heads, legs):
-    print(f"Solve chicken_rabbit_problems for heads:{heads} and legs:{legs}")
+@app.route('/<start>/<end>/<num>')
+def changeroute(start, end, num):
+    print(f"Solved for start:{start} and end:{end} and num:{num}")
 
-    result = chicken_rabbit_cage(int(heads), int(legs))
+    result = cal(float(start), float(end), int(num))
     return jsonify(result)
     
 
