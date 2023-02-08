@@ -1,11 +1,10 @@
 from flask import Flask
 from flask import jsonify
-from sys
 app = Flask(__name__)
 
 def cal(x, y):
     if n<=1:
-        return [{'sum': float('-inf')}]
+        return [{'sum':-99999999)}]
     sum = (start + end)*num/2
     return [{'sum':sum}]
 
