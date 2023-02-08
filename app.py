@@ -3,7 +3,7 @@ from flask import jsonify
 app = Flask(__name__)
 
 def cal(start, end, num):
-    if n<=1:
+    if num <=1:
         return [{'sum':-99999999)}]
     sum = (start + end)*num/2
     return [{'sum':sum}]
